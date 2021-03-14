@@ -74,10 +74,13 @@ This ELK server is configured to monitor the following machines:
   Web3 10.0.0.7
   
 We have installed the following Beats on these machines:
-Filebeat, Metricbeat
+-Filebeat
+-Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+-Filebeat will allow us to monitor log files or locations we decide to watch. 
+-More importantly it will collect these log events and send them to Elasticsearch or Logstash for analysis.
+-Metricbeat will show us the metrics and statistics of our servers. This will send this data to Elasticsearch or Logstash for further analysis.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -86,7 +89,7 @@ SSH into the control node and follow the steps below:
 
 Copy the file to /etc/ansible/.
 Update the Ansible Host file to specify which machine you wish to run your playbooks. Create groups in the host file by using [your group here]. After making your group assign your ip address to the group or groups.
-Run the playbook, and navigate to http//(elk public ip here)5601:/app/Kibana to check that the installation worked as expected.
+Run the playbook, and navigate to http//52.179.213.172:5601:/app/Kibana to check that the installation worked as expected.
 
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
